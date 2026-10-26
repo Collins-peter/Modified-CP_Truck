@@ -1,0 +1,15 @@
+<option value="AGEGE">AGEGE</option>
+<option value="ALIMOSHO">ALIMOSHO</option>
+<option value="APAPA">APAPA</option>
+<option value="BADAGRY">BADAGRY</option>
+<option value="EPE">EPE</option>
+<option value="ETI-OSA">ETI-OSA</option>
+<option value="IBEJU-LEKKI">IBEJU-LEKKI</option>
+<option value="LAGOS-ISLAND">LAGOS-ISLAND</option>
+<option value="OJO">OJO</option>
+<option value="MUSHIN">MUSHIN</option>
+<option value="SHOMOLU">SHOMOLU</option>
+<option value="SURULERE">SURULERE</option>
+<option value="LAGOS MAINLAND">LAGOS MAINLAND</option>
+<option value="IKORODU">IKORODU</option>
+<option value="IKEJA">IKEJA</option>

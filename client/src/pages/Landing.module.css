@@ -1,0 +1,121 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-lg) var(--space-2xl);
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--color-primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo span {
+  color: var(--color-accent);
+}
+.logo img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: solid 4px var(--color-accent);
+}
+
+.navActions {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.hero {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-2xl);
+  background: radial-gradient(circle at top right, #fff7ed, var(--color-bg) 60%);
+}
+
+.heroContent {
+  max-width: 640px;
+}
+
+.badge {
+  display: inline-block;
+  background: #fff7ed;
+  color: var(--color-accent);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: var(--space-lg);
+}
+
+.heroContent h1 {
+  font-size: 42px;
+  font-weight: 800;
+  color: var(--color-primary);
+  line-height: 1.2;
+  margin-bottom: var(--space-md);
+}
+
+.heroContent p {
+  font-size: 17px;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-xl);
+}
+
+.heroActions {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+}
+
+.heroActions .btn {
+  padding: 12px 28px;
+  font-size: 15px;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  max-width: 900px;
+  margin: var(--space-2xl) auto 0;
+  padding: 0 var(--space-lg);
+}
+
+.featureCard {
+  padding: var(--space-lg);
+  text-align: left;
+}
+
+.featureCard h3 {
+  font-size: 16px;
+  color: var(--color-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.featureCard p {
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 700px) {
+  .features {
+    grid-template-columns: 1fr;
+  }
+  .heroContent h1 {
+    font-size: 30px;
+  }
+}
