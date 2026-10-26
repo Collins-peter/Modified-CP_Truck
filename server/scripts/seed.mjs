@@ -38,7 +38,21 @@ const runSeed = async () => {
       throw new Error(`database.sql not found at ${sqlPath}`);
     }
 
-    const sql = fs.readFileSync(sqlPath, 'utf8');
+    let sql = fs.readFileSync(sqlPath, 'utf8');
+
+    // If using a cloud database URL with a specific database (e.g. defaultdb on Aiven)
+    if (process.env.DATABASE_URL) {
+      try {
+        const urlObj = new URL(process.env.DATABASE_URL.replace('mysql://', 'http://'));
+        const targetDb = urlObj.pathname.replace('/', '') || 'defaultdb';
+        sql = sql.replace(/CREATE DATABASE IF NOT EXISTS `cptruck_db`[^;]*;/i, '-- CREATE DATABASE bypassed for cloud host');
+        sql = sql.replace(/USE `cptruck_db`;/i, `USE \`${targetDb}\`;`);
+      } catch {
+        // Fallback: target defaultdb
+        sql = sql.replace(/USE `cptruck_db`;/i, 'USE `defaultdb`;');
+      }
+    }
+
     console.log('Executing database.sql...');
     await connection.query(sql);
     console.log('✅ Database created and seeded successfully with demo accounts!');

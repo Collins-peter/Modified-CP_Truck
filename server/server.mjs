@@ -87,8 +87,8 @@ const PORT = process.env.PORT || 5000;
 
 const startServer = async () => {
   await testConnection();
-  app.listen(PORT, () => {
-    console.log(`🚚 CP Truck server running on http://localhost:${PORT}`);
+  app.listen(PORT, '0.0.0.0', () => {
+    console.log(`🚚 CP Truck server running on port ${PORT}`);
   });
 };
 

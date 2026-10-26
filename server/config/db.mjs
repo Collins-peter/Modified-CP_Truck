@@ -31,7 +31,8 @@ const pool = mysql.createPool(poolConfig);
 export const testConnection = async () => {
   try {
     const connection = await pool.getConnection();
-    console.log('✅ MySQL connected successfully to', process.env.DB_NAME);
+    const [[dbResult]] = await connection.query('SELECT DATABASE() as current_db;');
+    console.log(`✅ MySQL connected successfully to database: [${dbResult?.current_db || process.env.DB_NAME}]`);
     connection.release();
   } catch (err) {
     console.error('❌ MySQL connection failed:', err.message);
